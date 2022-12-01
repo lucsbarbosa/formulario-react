@@ -1,0 +1,61 @@
+$blue: #191A4B;
+
+.outside-container {
+    background-color: #FFFFFF;
+    width: 42rem;
+    height: 37.8rem;
+    border-radius: .8rem;
+    padding: 2.7rem 3.4rem;
+}
+
+.inner-container h3 {
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: $blue;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.input-group {
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.9rem;
+}
+
+.input-group input {
+    border: 0;
+    border-bottom: 0.15rem solid $blue;
+    padding-bottom: 0.55rem;
+    font-size: 1.4rem;
+    font-family: "Montserrat";
+    font-weight: 600;
+    color: #232323;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: $blue;
+    font-size: 1.4rem;
+}
+
+.submit-group button {
+    width: 15.7rem;
+    height: 4.3rem;
+    border-radius: 1.2rem;
+    padding: 0.85rem 4.4rem;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    background-color: $blue;
+    cursor: pointer;
+}
+
+.submit-group {
+    display: flex;
+    gap: 2.1rem;
+    align-items: center;
+}
