@@ -3,7 +3,6 @@ $blue: #191A4B;
 .outside-container {
     background-color: #FFFFFF;
     width: 42rem;
-    height: 37.8rem;
     border-radius: .8rem;
     padding: 2.7rem 3.4rem;
 }
@@ -16,14 +15,14 @@ $blue: #191A4B;
     text-transform: uppercase;
 }
 
-.input-group {
-    margin: 3rem 0;
+.inner-container form {
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     gap: 2.9rem;
 }
 
-.input-group input {
+.inner-container form input {
     border: 0;
     border-bottom: 0.15rem solid $blue;
     padding-bottom: 0.55rem;
@@ -34,13 +33,12 @@ $blue: #191A4B;
     outline: none;
 }
 
-.input-group input::placeholder {
+.inner-container form input::placeholder {
     color: $blue;
     font-size: 1.4rem;
 }
 
-.submit-group button {
-    width: 15.7rem;
+.inner-container button {
     height: 4.3rem;
     border-radius: 1.2rem;
     padding: 0.85rem 4.4rem;
@@ -54,8 +52,14 @@ $blue: #191A4B;
     cursor: pointer;
 }
 
-.submit-group {
-    display: flex;
-    gap: 2.1rem;
-    align-items: center;
+.recaptcha {
+    align-self: center;
+}
+
+.email-error {
+    color: #ff6961;
+    font-size: 1rem;
+    font-family: "Montserrat";
+    position: absolute;
+    top: 24rem;
 }

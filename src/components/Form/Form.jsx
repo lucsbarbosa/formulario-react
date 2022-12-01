@@ -1,26 +1,39 @@
-import ReCAPTCHA from 'react-google-recaptcha'
-import './Form.scss'
+import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
+import "./Form.scss";
 
 export default function Form() {
-    return (
-        <div className="outside-container">
-            <div className="inner-container">
-                <h3>Formulário de contato</h3>
-                <form>
-                    <div className='input-group'>
-                        <input type="text" placeholder='Seu nome *' />
-                        <input type="text" placeholder='Seu e-mail' />
-                        <input type="text" placeholder='Assunto' />
-                        <input type="text" placeholder='Sua mensagem *' />
-                    </div>
-                    <div className='submit-group'>
-                        <ReCAPTCHA 
-                            sitekey='6LdsuUojAAAAAJxJgTVtmDwwro-7xwbU2isk8kPN' 
-                         />
-                        <button type="submit">Enviar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    )
+  const [email, setEmail] = useState({ value: "", valid: true });
+  return (
+    <div className="outside-container">
+      <div className="inner-container">
+        <h3>Formulário de contato</h3>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input type="text" placeholder="Seu nome *" required />
+          <input
+            type="text"
+            placeholder="Seu e-mail *"
+            value={email.value}
+            onChange={(e) =>
+              setEmail({
+                value: e.target.value,
+                valid: e.target.value === "" ? true : /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(e.target.value),
+              })
+            }
+            required
+          />
+          {!email.valid && (
+            <span className="email-error">Digite um email válido</span>
+          )}
+          <input type="text" placeholder="Assunto" />
+          <input type="text" placeholder="Sua mensagem *" required />
+          <ReCAPTCHA
+            className="recaptcha"
+            sitekey="6LdsuUojAAAAAJxJgTVtmDwwro-7xwbU2isk8kPN"
+          />
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  );
 }
